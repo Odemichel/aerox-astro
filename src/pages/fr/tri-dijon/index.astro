@@ -1,207 +1,205 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
 
 const metadata = {
   title: 'AeroX × Tri Dijon — Accès anticipé',
-  description: "Mesure ta vraie position aéro chez toi, entraîne-toi à la tenir, et cours en ligne avec ta posture qui compte. Inscris-toi pour l'accès en avant-première réservé aux participants du Tri Dijon.",
+  description: "Mesure ton aéro chez toi avec une simple webcam. Inscris-toi pour l'accès en avant-première réservé aux participants du Tri Dijon.",
   robots: { index: false, follow: false },
 };
 ---
 
 <Layout metadata={metadata}>
-  <section class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-    <!-- Hero -->
-    <div class="text-center mb-14">
-      <p class="text-sm font-semibold uppercase tracking-widest text-amber-500 mb-3">AeroX × Tri Dijon — Accès anticipé</p>
-      <h1 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-5 leading-tight">
+  <!-- HERO ************************************************************ -->
+  <Hero
+    id="top"
+    tagline="AeroX × Tri Dijon — Accès anticipé"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Je veux savoir en premier',
+        icon: 'tabler:arrow-down',
+        href: '#inscription',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="font-bold">
         Combien de minutes tu pourrais gagner<br class="hidden md:block" />
-        sur ton prochain triathlon en optimisant ta position ?
-      </h1>
-      <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-        AeroX mesure ton aéro <strong>en temps réel</strong> sur ton home trainer.
-        Pas de soufflerie. Pas de capteurs en plus. 2 minutes pour voir ton CdA bouger
-        en changeant de position.
+        sur ton prochain<br class="md:hidden" />
+        <span class="text-primary">triathlon</span> ?
+      </span>
+    </Fragment>
+
+    <Fragment slot="paragraph">
+      AeroX mesure ton aéro <strong>en temps réel</strong> sur ton home trainer,
+      avec une simple <strong>webcam</strong>.
+    </Fragment>
+  </Hero>
+
+  <!-- 3 PILIERS ******************************************************** -->
+  <section class="relative not-prose -mt-32 md:-mt-40">
+    <div class="mx-auto max-w-6xl px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Carte 1 — Mesure (sky) -->
+        <article class="group relative flex flex-col rounded-2xl border-2 border-sky-400 bg-white dark:bg-slate-800 shadow-lg hover:shadow-[0_10px_40px_hsl(200_90%_55%/0.3)] transition-all overflow-hidden">
+          <div class="absolute top-4 right-4 z-10">
+            <span class="bg-slate-900/80 text-sky-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
+          </div>
+          <div class="bg-sky-50 dark:bg-sky-900/20 px-6 py-5 border-b border-sky-200/60 dark:border-sky-800/40">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-9 h-9 rounded-lg bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center">
+                <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19a3 3 0 11-6 0 3 3 0 016 0zm12-3a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Mesure</p>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Connais ton CdA réel</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Ta vraie traînée aéro, sans soufflerie.</p>
+          </div>
+          <div class="px-6 py-5 flex flex-col flex-grow">
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
+              <li class="flex items-start gap-2"><span class="text-sky-500 mt-0.5">✓</span> Mesure temps réel sur home trainer</li>
+              <li class="flex items-start gap-2"><span class="text-sky-500 mt-0.5">✓</span> Compare plusieurs positions instantanément</li>
+              <li class="flex items-start gap-2"><span class="text-sky-500 mt-0.5">✓</span> Setup 2 min, zéro hardware en plus</li>
+              <li class="flex items-start gap-2"><span class="text-sky-500 mt-0.5">✓</span> Issu de 15 ans de recherche CNRS</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Carte 2 — Entraînement (primary/amber, mise en avant) -->
+        <article class="group relative flex flex-col rounded-2xl border-2 border-amber-400 bg-white dark:bg-slate-800 shadow-xl hover:shadow-[0_10px_40px_hsl(35_95%_58%/0.4)] transition-all overflow-hidden md:scale-105 md:-translate-y-2">
+          <div class="absolute top-4 right-4 z-10 flex flex-col items-end gap-1.5">
+            <span class="bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Le cœur d'AeroX</span>
+            <span class="bg-slate-900/80 text-amber-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
+          </div>
+          <div class="bg-amber-50 dark:bg-amber-900/20 px-6 py-5 border-b border-amber-200/60 dark:border-amber-800/40">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Entraînement</p>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Entraîne-toi à rester aéro</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">L'aéro, ça se travaille — comme la puissance.</p>
+          </div>
+          <div class="px-6 py-5 flex flex-col flex-grow">
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
+              <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span> Trouve la position qui te fait le plus gagner</li>
+              <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span> Améliore ton endurance dans cette position</li>
+              <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span> Deviens puissant <em>dans</em> cette position</li>
+              <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✓</span> Retour temps réel + suivi de progression</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Carte 3 — Course (violet) -->
+        <article class="group relative flex flex-col rounded-2xl border-2 border-violet-400 bg-white dark:bg-slate-800 shadow-lg hover:shadow-[0_10px_40px_hsl(265_85%_60%/0.3)] transition-all overflow-hidden">
+          <div class="absolute top-4 right-4 z-10">
+            <span class="bg-slate-900/80 text-violet-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
+          </div>
+          <div class="bg-violet-50 dark:bg-violet-900/20 px-6 py-5 border-b border-violet-200/60 dark:border-violet-800/40">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-9 h-9 rounded-lg bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center">
+                <svg class="w-5 h-5 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400">Course en ligne</p>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cours en mode aéro</h2>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Les premières courses où ta position compte.</p>
+          </div>
+          <div class="px-6 py-5 flex flex-col flex-grow">
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
+              <li class="flex items-start gap-2"><span class="text-violet-500 mt-0.5">✓</span> CLM avec ta vraie posture prise en compte</li>
+              <li class="flex items-start gap-2"><span class="text-violet-500 mt-0.5">✓</span> « Dernier homme debout » : résistance asservie à ta position</li>
+              <li class="flex items-start gap-2"><span class="text-violet-500 mt-0.5">✓</span> Courses en ligne et classements hebdo</li>
+              <li class="flex items-start gap-2"><span class="text-violet-500 mt-0.5">✓</span> Maillots de saison à défendre</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE INSCRIPTION ******************************************* -->
+  <section id="inscription" class="relative not-prose scroll-mt-20">
+    <div class="mx-auto max-w-2xl px-4 md:px-6 py-16 md:py-20">
+      <div class="rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-primary/15 dark:via-primary/10 dark:to-transparent border border-primary/20 shadow-2xl p-6 md:p-10">
+        <div class="text-center mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            Sois prévenu en premier
+          </h2>
+          <p class="text-base text-muted dark:text-slate-300">
+            Reçois l'accès dès que la mesure est disponible.
+          </p>
+        </div>
+
+        <form
+          id="form-tri-dijon"
+          class="flex flex-col gap-4"
+          data-success="Merci ! On te contacte dès que l'accès est ouvert."
+          data-error="Une erreur est survenue. Réessaie ou écris-nous à contact@aeroxbefaster.com."
+        >
+          <input
+            type="text"
+            id="name-tri-dijon"
+            name="name"
+            placeholder="Prénom"
+            required
+            autocomplete="given-name"
+            class="w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-slate-500"
+          />
+          <input
+            type="email"
+            id="email-tri-dijon"
+            name="email"
+            placeholder="Email"
+            required
+            autocomplete="email"
+            class="w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-slate-500"
+          />
+          <input
+            type="tel"
+            id="phone-tri-dijon"
+            name="phone"
+            placeholder="Téléphone (optionnel)"
+            autocomplete="tel"
+            class="w-full border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 dark:placeholder:text-slate-500"
+          />
+
+          <!-- Bloc beta-testeur -->
+          <label class="flex items-start gap-3 p-4 rounded-xl bg-white/60 dark:bg-slate-800/60 border border-primary/30 cursor-pointer hover:bg-white dark:hover:bg-slate-800 hover:border-primary/60 transition">
+            <input
+              type="checkbox"
+              id="beta-tester-tri-dijon"
+              name="betaTester"
+              class="mt-1 w-5 h-5 accent-primary cursor-pointer"
+            />
+            <span class="text-sm text-slate-700 dark:text-slate-200">
+              <strong class="block mb-1">Je veux devenir beta-testeur AeroX</strong>
+              <span class="text-slate-600 dark:text-slate-400">
+                Tu as essayé AeroX au village du Tri Dijon ? Aide-nous à finaliser les derniers
+                réglages : accès en avant-première et tes retours façonneront la version finale.
+              </span>
+            </span>
+          </label>
+
+          <button type="submit" class="btn-primary w-full py-3 text-lg font-semibold rounded-xl">
+            Je veux savoir en premier
+          </button>
+
+          <p class="text-xs text-center text-muted dark:text-slate-400">
+            Pas de spam. Tu te désinscris en un clic.
+          </p>
+          <p id="msg-tri-dijon" class="text-sm text-center mt-2 hidden"></p>
+        </form>
+      </div>
+
+      <p class="text-center text-sm text-muted dark:text-slate-400 mt-8">
+        Une question ? Écris-nous à <a href="mailto:contact@aeroxbefaster.com" class="text-primary hover:underline font-semibold">contact@aeroxbefaster.com</a>
       </p>
     </div>
-
-    <!-- 3 cartes piliers -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-
-      <!-- Carte 1 — Mesure -->
-      <div class="relative flex flex-col rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-md overflow-hidden">
-        <div class="absolute top-4 right-4 z-10">
-          <span class="bg-slate-900/80 text-amber-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
-        </div>
-        <div class="bg-slate-100 dark:bg-slate-700 px-6 py-5">
-          <p class="text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-1">Mesure</p>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Connais ton CdA réel</h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Ta vraie traînée aéro, sans soufflerie.</p>
-        </div>
-        <div class="px-6 py-5 flex flex-col flex-grow">
-          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Mesure temps réel sur ton home trainer
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Compare instantanément plusieurs positions
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Setup 2 min, zéro hardware en plus
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Issu de 15 ans de recherche CNRS
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Carte 2 — Entraînement -->
-      <div class="relative flex flex-col rounded-2xl border-2 border-amber-400 bg-white dark:bg-slate-800 shadow-xl overflow-hidden">
-        <div class="absolute top-4 right-4 z-10">
-          <span class="bg-slate-900/80 text-amber-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
-        </div>
-        <div class="bg-amber-50 dark:bg-amber-900/20 px-6 py-5">
-          <p class="text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-1">Entraînement</p>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Entraîne-toi à rester aéro</h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">L'aéro, ça se travaille — comme la puissance.</p>
-        </div>
-        <div class="px-6 py-5 flex flex-col flex-grow">
-          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Trouve la position qui te fait le plus gagner
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Améliore ton endurance dans cette position
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Deviens puissant <em>dans</em> cette position
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Retour temps réel + suivi de progression
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Carte 3 — Course en ligne -->
-      <div class="relative flex flex-col rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-md overflow-hidden">
-        <div class="absolute top-4 right-4 z-10">
-          <span class="bg-slate-900/80 text-amber-300 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">Automne 2026</span>
-        </div>
-        <div class="bg-slate-100 dark:bg-slate-700 px-6 py-5">
-          <p class="text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-1">Course en ligne</p>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Cours en mode aéro</h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Les premières courses où ta position compte vraiment.</p>
-        </div>
-        <div class="px-6 py-5 flex flex-col flex-grow">
-          <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 flex-grow">
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Simulations de CLM avec ta vraie posture
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              « Dernier homme debout » : résistance asservie à ta position
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Courses en ligne et classements hebdo
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-amber-500 mt-0.5">✓</span>
-              Maillots de saison à défendre
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA Formulaire -->
-    <div id="inscription" class="max-w-2xl mx-auto rounded-2xl border-2 border-amber-400 bg-white dark:bg-slate-800 shadow-xl p-6 md:p-10">
-      <div class="text-center mb-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-          Sois prévenu en premier
-        </h2>
-        <p class="text-base text-slate-600 dark:text-slate-300">
-          Reçois l'accès dès que la mesure est disponible. Réservé aux participants du Tri Dijon.
-        </p>
-      </div>
-
-      <form
-        id="form-tri-dijon"
-        class="flex flex-col gap-4"
-        data-success="Merci ! On te contacte dès que l'accès est ouvert."
-        data-error="Une erreur est survenue. Réessaie ou écris-nous à contact@aeroxbefaster.com."
-      >
-        <input
-          type="text"
-          id="name-tri-dijon"
-          name="name"
-          placeholder="Prénom"
-          required
-          autocomplete="given-name"
-          class="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-400"
-        />
-        <input
-          type="email"
-          id="email-tri-dijon"
-          name="email"
-          placeholder="Email"
-          required
-          autocomplete="email"
-          class="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-400"
-        />
-        <input
-          type="tel"
-          id="phone-tri-dijon"
-          name="phone"
-          placeholder="Téléphone (optionnel)"
-          autocomplete="tel"
-          class="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-400"
-        />
-
-        <!-- Bloc beta-testeur -->
-        <label class="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 cursor-pointer hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">
-          <input
-            type="checkbox"
-            id="beta-tester-tri-dijon"
-            name="betaTester"
-            class="mt-1 w-5 h-5 accent-amber-500 cursor-pointer"
-          />
-          <span class="text-sm text-slate-700 dark:text-slate-200">
-            <strong class="block mb-1">Je veux devenir beta-testeur AeroX</strong>
-            Tu as essayé AeroX au village du Tri Dijon ? Aide-nous à finaliser les derniers
-            réglages : tu auras l'accès en avant-première et tes retours façonneront la version finale.
-          </span>
-        </label>
-
-        <button
-          type="submit"
-          class="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold text-lg transition shadow-md"
-        >
-          Je veux savoir en premier
-        </button>
-
-        <p class="text-xs text-center text-slate-500 dark:text-slate-400">
-          Pas de spam. Tu te désinscris en un clic.
-        </p>
-        <p id="msg-tri-dijon" class="text-sm text-center mt-2 hidden"></p>
-      </form>
-    </div>
-
-    <!-- Footer note -->
-    <p class="text-center text-sm text-slate-500 dark:text-slate-400 mt-10">
-      Une question ? Écris-nous à <a href="mailto:contact@aeroxbefaster.com" class="text-amber-500 hover:underline">contact@aeroxbefaster.com</a>
-    </p>
   </section>
 
   <script>
@@ -217,6 +215,7 @@ const metadata = {
       const betaTester = (document.getElementById('beta-tester-tri-dijon') as HTMLInputElement).checked;
 
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const originalLabel = submitBtn?.textContent ?? 'Je veux savoir en premier';
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Envoi en cours…';
@@ -248,7 +247,7 @@ const metadata = {
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Je veux savoir en premier';
+          submitBtn.textContent = originalLabel;
         }
       }
     });
